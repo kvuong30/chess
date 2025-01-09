@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <style>
+        /* Simple styles for the page and chessboard container */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #board1 {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chess Game</h1>
+
+    <!-- Chessboard container where the board will be rendered -->
+    <div id="board1"></div>
+
+    <!-- Load Chessboard.js from CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kevinludwig/pgn-parser/dist/pgn-parser.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script> -->
+   <script src="{% static 'js/chessboard-1.0.0.min.js' %}"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.1/chess.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/jbkunst/chessboardjs-themes/chessboardjs-themes.js"></script>
+    <!--<img src="{% static 'chess_game/img/chesspieces/wikipedia/bN.png' %}" alt="Black Knight">-->
+    <!--<img src="{% static 'chess_game/img/chesspieces/wikipedia/bR.png' %}" alt="Black Rook">-->
+<div id="board1" style="width: 180px"></div>
+
+
+    <script>
+        // Ensure that the Chessboard.js script is fully loaded before initialization
+        window.onload = function() {
+            // Check if Chessboard is available
+            if (typeof Chessboard !== 'undefined') {
+                var board = Chessboard('board1', {
+                    draggable: true,    // Allow pieces to be dragged
+                    dropOffBoard: 'trash',  // Drop pieces off the board
+                    sparePieces: true    // Allow pieces to be dragged outside the board
+                });
+
+                // Start the game by setting up the pieces on the board
+                board.start();
+            } else {
+                console.error("Chessboard.js failed to load.");
+            }
+        };
+    </script>
+</body>
+</html>
