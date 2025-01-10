@@ -1,16 +1,19 @@
+# chess_game/asgi.py
+
 import os
+from django.core.asgi import get_asgi_application
 from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
-from django.urls import re_path
-from chess_game import consumers
+from chess.consumers import ChessConsumer
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chess_project.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "chess_game.settings")
 
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
     "websocket": AuthMiddlewareStack(
         URLRouter([
-            re_path(r"^ws/chess/(?P<roomName>\w+)/$", consumers.ChessGameConsumer.as_asgi()),
+            # Define WebSocket URL for the chess game
+            path("ws/game/<str:game_id>/", ChessConsumer.as_asgi()),
         ])
     ),
 })
