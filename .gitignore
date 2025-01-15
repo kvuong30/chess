@@ -1,0 +1,6 @@
+.idea/
+chess_game/__pycache__/
+chess_game/migrations/__pycache__/
+chess_game2/__pycache__/
+chess_game/.DS_Store
+chess_game/static/.DS_Store

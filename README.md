@@ -446,7 +446,7 @@ python manage.py runserver
 ```
 
 ### 7. View chess game
-Open in your browser: http://localhost:8000/
+Open in your browser: http://localhost:8000/chess_game
 
 
 
