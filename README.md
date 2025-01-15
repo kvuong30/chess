@@ -2,9 +2,9 @@
 
 ### Overview - Game of Codes: Crafting a Chess App with Django and MongoDB
 
-Building a chess app is not just about writing code—it's also a strategy. Just like in chess, programming requires careful thought, planning, and a systematic approach. In chess, each move builds upon the last, much like how software development requires breaking down complex problems into smaller, manageable pieces. Each piece on the chessboard has a distinct role, just like each function or class in programming serves a specific purpose. Whether you're developing a chess app or playing a game of chess, the key to success lies in foresight, creativity, and the ability to adapt to new situations. Programming with Django and MongoDB will be like strategizing on a chessboard, where you create a structure, anticipate moves, and ensure every part of the app works together harmoniously. Many developers are strategic thinkers and enjoy strategic games, such as chess. Some developers are even avid chess players, who would take the time to analyze their moves and learn from their mistakes, similar to the problem-solving and strategic learning/planning of programming. Ultimately, both coding and chess can be intellectually rewarding and involve a mix of logic and creativity, as top chess players often think "outside the box," creating new opening variations, tactical combinations, or endgame strategies.
+Chess is an incredibly popular game globally, with a rich history that spans centuries. Could it be the intellectual challenge that draws those who enjoy problem-solving and mental stimulation? Similar to chess, programming requires careful planning strategy and a systematic approach to problem-solving. Software development requires breaking down complex problems into smaller, manageable pieces – just like in chess, each move builds upon the last. Each chess piece has a distinct role, just like each function or class in programming serves a specific requirement. Many programmers are avid chess players, who would take the time to analyze their moves and learn from their mistakes. Ultimately, both coding and chess can be intellectually rewarding and involve a mix of logic and creativity, as top chess players often think "outside the box," creating new opening variations, tactical combinations, or endgame strategies.
 
-This tutorial aims to serve as a starting point in implementing the beautiful game of chess as a web application with Django as the backend, MongoDB for the database, and an AI chess bot that users can play against. It’ll guide you through creating a fully functional chess app using Django for the backend and MongoDB for the database. By the end of the tutorial, you will have a web application where users can play chess games, see their current game state, and even retrieve past game data. We’ll use Django for handling the backend logic, creating API endpoints, and managing user authentication. MongoDB, a NoSQL database, will store game states, player moves, and metadata in a way that’s flexible and scalable. We’ll break down each section of the app step by step, explaining how Django interacts with MongoDB, and how the front-end (which we'll keep simple) displays the current state of the chess game.
+This tutorial aims to serve as a starting point in implementing the beautiful game of chess as a web application with Django as the backend, MongoDB for the database, and an AI chess bot that users can play against. This guide will assist with creating a fully functional chess app using Django for the backend and MongoDB for the database. By the end of the tutorial, we will have a web application where users can play chess games, see their current game state, and even retrieve past game data. We’ll break down each section of the app step by step, focusing on how Django interacts with MongoDB.
 
 ### Why Django and MongoDB?
 In this tutorial, Django and MongoDB were chosen for several key reasons.
@@ -27,7 +27,7 @@ Together, Django and MongoDB provide a strong, flexible, and efficient stack for
   * django
   * djangorestframework
   * pymongo
-  * django-cors-headers (for handling CORS)
+  * django-cors-headers (for handling Cross-Origin Resource Sharing, or CORS. Ref: https://github.com/adamchainz/django-cors-headers)
   * chess (Python chess library)
   * channels_redis
 
@@ -35,7 +35,7 @@ Together, Django and MongoDB provide a strong, flexible, and efficient stack for
 
 For a cleaner development experience and to avoid potential package version conflicts, it’s highly recommended to create a virtual environment for your Django project.  A virtual environment is an isolated workspace that allows you to manage project-specific dependencies without affecting your global Python installation. This is crucial for maintaining clean and consistent project environments, especially when working on multiple projects with different dependency versions. By using a virtual environment, you ensure that your project’s dependencies are neatly contained, preventing potential conflicts between different libraries or versions of Python.
 
-If you’re new to virtual environments, see this official Python guide provides detailed instructions on how to create and manage virtual environments: https://docs.python.org/3/tutorial/venv.html
+If you’re new to virtual environments, see this official Python guide with detailed instructions on how to create and manage virtual environments: https://docs.python.org/3/tutorial/venv.html
 
 To create a virtual environment, follow these steps:
 
@@ -451,5 +451,4 @@ Open in your browser: http://localhost:8000/
 
 
 ### 8. Conclusion
-Congratulations! You’ve just built a simple yet powerful chess app using Django and MongoDB. You now have a functioning backend that tracks game data and a basic frontend to visualize the chessboard. This project gave you experience in connecting Django with MongoDB, designing a chess game model, and creating API endpoints for game actions. Of course, this is just the beginning—you can enhance this app by adding features like player authentication, real-time gameplay (with WebSockets), and advanced chess logic. By following this tutorial, you’ve built the foundation for a dynamic, scalable chess application that could grow into a fully-fledged game platform. Happy coding, and may your next move be your best!
-, you've created a functional chess game with a player vs. AI bot interaction, backed by Django, Django Channels, MongoDB, and an AI bot using Stockfish
+Congratulations! You’ve just built a chess app with Django and MongoDB, with a functioning backend that tracks game data and a basic frontend to visualize the chessboard. Let this project be an experience in connecting Django with MongoDB, designing a chess game model, and creating API endpoints for game actions. This chess app can further be enhanced by adding features like player authentication, real-time gameplay, and advanced chess logic. Happy coding, and may your next move be a checkmate!
